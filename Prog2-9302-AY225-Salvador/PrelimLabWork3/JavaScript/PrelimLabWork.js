@@ -1,0 +1,27 @@
+// Input
+let attendance = parseFloat(prompt("Enter Attendance score:"));
+let lab1 = parseFloat(prompt("Enter Lab Work 1 grade:"));
+let lab2 = parseFloat(prompt("Enter Lab Work 2 grade:"));
+let lab3 = parseFloat(prompt("Enter Lab Work 3 grade:"));
+
+// Computations
+let attendanceScore = (attendance / MAX_ATTENDANCE) * 100; 
+let labAverage = (lab1 + lab2 + lab3) / 3;
+let classStanding = (attendance * 0.40) + (labAverage * 0.60);
+
+// Required Prelim Exam Scores
+let requiredPass = (75 - (classStanding * 0.30)) / 0.70;
+let requiredExcellent = (100 - (classStanding * 0.30)) / 0.70;
+
+// Output
+alert(
+    "--- RESULTS ---\n" +
+    "Attendance: " + attendance + "\n" +
+    "Lab Work 1: " + lab1 + "\n" +
+    "Lab Work 2: " + lab2 + "\n" +
+    "Lab Work 3: " + lab3 + "\n" +
+    "Lab Work Average: " + labAverage.toFixed(2) + "\n" +
+    "Class Standing: " + classStanding.toFixed(2) + "\n\n" +
+    "Required Prelim Exam (Passing – 75): " + requiredPass.toFixed(2) + "\n" +
+    "Required Prelim Exam (Excellent – 100): " + requiredExcellent.toFixed(2)
+);
